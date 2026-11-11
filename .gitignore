@@ -1,0 +1,12 @@
+node_modules/
+.env
+.env.*
+!.env.example
+artifacts/
+cache/
+dist/
+coverage/
+frontend/public/deployment.json
+frontend/public/deployment.json.tmp
+*.log
+.DS_Store

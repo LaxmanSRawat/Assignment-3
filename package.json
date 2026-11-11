@@ -1,0 +1,25 @@
+{
+  "name": "land-pool-assignment",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": "^22.13.0 || ^24.0.0 || ^26.0.0" },
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "deploy:sepolia": "node scripts/check-sepolia.mjs && hardhat run scripts/deploy.ts --network sepolia"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "5.6.1",
+    "ethers": "6.17.0"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-ethers": "4.2.2",
+    "@nomicfoundation/hardhat-node-test-runner": "3.1.2",
+    "hardhat": "3.21.2",
+    "vite": "8.3.8"
+  }
+}

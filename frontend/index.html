@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Assignment 3</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <main>
+      <header class="page-header">
+        <div class="brand"><h1>Assignment 3</h1></div>
+        <div class="wallet-actions">
+          <span class="network"><span aria-hidden="true"></span>Sepolia</span>
+          <button id="connect" type="button" disabled>Connect MetaMask</button>
+          <button id="switch-network" type="button" hidden>Switch to Sepolia</button>
+        </div>
+      </header>
+
+      <section class="wallet-card" aria-labelledby="balances-title">
+        <div class="section-heading"><h2 id="balances-title">Your wallet</h2><button id="refresh" class="light-button" type="button" disabled>Refresh balances</button></div>
+        <p id="account" class="account">Not connected</p>
+        <div class="balances">
+          <div><span class="balance-label">Mock USDC</span><p id="wallet-usdc" class="balance">-</p></div>
+          <div><span class="balance-label">LAND</span><p id="wallet-land" class="balance">-</p></div>
+        </div>
+      </section>
+
+      <div class="workspace">
+        <section class="panel" aria-labelledby="trade-title">
+          <div class="section-heading"><h2 id="trade-title">Trade LAND</h2><span class="tag">Whole units</span></div>
+          <div class="funding-controls">
+            <button id="initialize" class="secondary" type="button" disabled>Add USDC + LAND to pool</button>
+            <label for="usdc-amount">Request mock USDC</label>
+            <div class="amount-field"><input id="usdc-amount" type="text" inputmode="decimal" autocomplete="off" value="100" aria-describedby="request-note" disabled /><span aria-hidden="true">USDC</span></div>
+            <p id="request-note" class="note">Receive mock USDC in your connected wallet.</p>
+            <button id="request-usdc" type="button" disabled>Request USDC</button>
+          </div>
+          <label for="amount">LAND amount</label>
+          <div class="amount-field"><input id="amount" type="text" inputmode="numeric" autocomplete="off" value="20" aria-describedby="quote" disabled /><span aria-hidden="true">LAND</span></div>
+          <p id="quote" class="quote" aria-live="polite">Connect to see a quote.</p>
+          <div class="trade-actions"><button id="buy" type="button" disabled>Approve &amp; buy</button><button id="sell" class="secondary" type="button" disabled>Approve &amp; sell</button></div>
+        </section>
+
+        <section class="panel" aria-labelledby="simulation-title">
+          <div class="section-heading"><h2 id="simulation-title">Timeline</h2><span class="tag">Simulation</span></div>
+          <div class="year-row"><p>On-chain year <strong id="chain-year">-</strong></p><p>Viewing year <strong id="view-year">-</strong></p></div>
+          <p class="price-label">Price per LAND</p>
+          <p class="price"><span id="price">-</span> <span>mock USDC</span></p>
+          <button id="advance" type="button" disabled>Advance 5 Years</button>
+          <div class="timeline-actions"><button id="past" class="text-button" type="button" disabled>Return to Year 0</button><button id="present" class="text-button" type="button" disabled>View current year</button></div>
+          <p id="view-note" class="note"></p>
+        </section>
+      </div>
+
+      <section class="activity" aria-labelledby="activity-title">
+        <h2 id="activity-title">Activity</h2>
+        <p id="setup" class="note" role="status"></p>
+        <p id="status" role="status" aria-live="polite">Connect your wallet to get started.</p>
+        <ul id="transactions" aria-label="Transaction history"></ul>
+      </section>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
